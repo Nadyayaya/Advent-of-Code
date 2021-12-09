@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 	vector<string> v;
-	ifstream file("day1.txt");
+	ifstream file("C:\Users\NXP302\OneDrive - Powerco Limited\Documents\day 1.txt");
 	if(file.is_open()) {
 		string line;
 		while(getline(file, line)) {
