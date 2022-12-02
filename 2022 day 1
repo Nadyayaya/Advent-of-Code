@@ -1,0 +1,15 @@
+#advent of code day 1
+file = open("adventofcode1.txt", "r").read().split("\n")
+sum1 = []
+max = 0
+compare = []
+
+for x in file:
+    if x != '':
+        sum1.append(int(x))
+    else:
+        compare.append(sum(sum1))
+        sum1 = []
+
+compare.sort()
+print(sum(compare[-3:])) #print out of sum of 3 biggest numbers
