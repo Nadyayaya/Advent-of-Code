@@ -1,0 +1,53 @@
+#advent of code day 12 part 2
+file = open("adventofcode1.txt", "r").read().split("\n")
+
+opponent = [];
+myResponse = [];
+win = 6;
+lose = 0;
+draw = 3;
+rock = 1; #rock
+paper = 2; #paper
+scissors = 3; #scissors
+score = 0;
+
+for x in file:
+    opponent.append(x.split(' ')[0])
+    myResponse.append(x.split(' ')[1])
+
+#FSM?
+for i, j in zip(opponent, myResponse):
+    if i == 'A': #if opponent plays rock
+         if j == 'X': #i need to lose
+            score = score + scissors + lose;
+         elif j == 'Y': # i play draw
+             score = score + rock + draw;
+         elif j =='Z': # i play win
+            score = score + paper + win;
+
+    elif i =='B': #if opponent plays paper
+        if j == 'X': #i play lose
+                score = score + rock + lose;
+        elif j == 'Y': # i play draw
+            score = score + paper + draw;
+        elif j =='Z': # i play scissors
+            score = score + scissors + win;
+
+    elif i =='C': #if opponent plays scissors
+        if j == 'X': #i play lose
+            score = score + paper + lose;
+        elif j == 'Y': # i play draw
+            score = score + scissors + draw;
+        elif j =='Z': # i play win
+            score = score + rock + win;
+
+print(score)
+
+
+
+
+
+
+
+
+
