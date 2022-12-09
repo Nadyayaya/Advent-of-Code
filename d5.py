@@ -11,6 +11,7 @@ cratesDeque = []
 instr = []
 instNum = []
 index = 0
+indexDeque = 0
 file = open('adventofcode1.txt', 'r').read().split('\n')
 #getting the crates
 for crates in file[0:nCrates]: #first 9 lines
@@ -18,14 +19,21 @@ for crates in file[0:nCrates]: #first 9 lines
     cratesDeque.append(deque())
 
 for line in cratesMatrix:
-    print(line)
+    index = 0
     for element in range(0, len(line), 4):
+        if index == 8:
+            break
         singleCrate = line[element:element+3]
         cratesDeque[index].appendleft(singleCrate) #still horicontal deque, not verticcal like what i want
-    index += 1
+        index += 1
 
-    print(cratesDeque)
 
+
+#sort this and you're algood
+x = cratesDeque[0] #whole first stack
+cratesDeque[0].pop()
+cratesDeque[1].appe(x)
+print(cratesDeque[1])
 
 
 #getting the instructions
