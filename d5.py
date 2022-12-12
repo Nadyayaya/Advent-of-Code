@@ -29,10 +29,10 @@ for line in cratesMatrix:
 
 
 
-#sort this and you're algood
-x = cratesDeque[0] #whole first stack
+
+x = cratesDeque[0].index(0) #whole first stack
 cratesDeque[0].pop()
-cratesDeque[1].appe(x)
+cratesDeque[1].insert(x)
 print(cratesDeque[1])
 
 
@@ -51,4 +51,3 @@ for x in numList:
     move = x[0]
     fromX = x[1]
     toX = x[2]
-
